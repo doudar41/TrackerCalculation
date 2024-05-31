@@ -95,11 +95,17 @@ public class BeatUpdateSource : MonoBehaviour
 
             string switchName = (string)timelineInfo.LastMarker;
 
-            if(tempMarkerName != switchName)
+            int n;
+            bool isNumeric = int.TryParse(switchName, out n);
+
+            if (tempMarkerName != switchName && isNumeric)
             {
                 tempMarkerName = switchName;
                 GamesMainEvents.UpdateOnBeat(switchName);
             }
+
+
+
         }
     }
 
