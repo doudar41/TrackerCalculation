@@ -142,7 +142,6 @@ public class Tracker : RhythmWeapon
 
         // Registering and play chords 
         updateUIColumn.Invoke((currentColumn / 2));
-        //CheckRunesInColumn();
         CheckElementalInColumn(elementsInColumn, beatSource, FMODParameter);
         //currentColumn++;
         if (currentColumn > 15)
@@ -156,99 +155,6 @@ public class Tracker : RhythmWeapon
         }
     }
 
-
-    void CheckRunesInColumn()
-    {
-        // Registering and play chords  
-        //print("elements " + elementsInColumn.Count);
-
-        if (elementsInColumn.Count > 0)
-        {
-            foreach (Elements e in elementsInColumn)
-            {
-                if (elementsInColumn.Count == 1 || (elementsInColumn.Contains(Elements.Neutral)&& elementsInColumn.Count == 2))
-                {
-                    beatSource.SetParameterToInstance("PlayElement", (int)e + 1);
-                    //Play element sound 
-                    //This means neutral should be some note that can be played anyy time with base track
-                }
-                DamageCalc(target, e);
-            }
-
-            if (elementsInColumn.Count > 1)
-            {
-                {
-                    if (elementsInColumn.Contains(Elements.Fire) && elementsInColumn.Contains(Elements.Ice))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 6);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIce] = runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIce] + 1;
-                    }
-
-                    if (elementsInColumn.Contains(Elements.Fire) && elementsInColumn.Contains(Elements.Earth))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 7);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.FireEarth] = runesongAtEndOfTurn.chordsPresent[ChordTypes.FireEarth] + 1;
-                    }
-
-                    if (elementsInColumn.Contains(Elements.Fire) && elementsInColumn.Contains(Elements.Air))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 8);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.FireAir] = runesongAtEndOfTurn.chordsPresent[ChordTypes.FireAir] + 1;
-                    }
-                    if (elementsInColumn.Contains(Elements.Ice) && elementsInColumn.Contains(Elements.Earth))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 9);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.IceEarth] = runesongAtEndOfTurn.chordsPresent[ChordTypes.IceEarth] + 1;
-                    }
-                    if (elementsInColumn.Contains(Elements.Ice) && elementsInColumn.Contains(Elements.Air))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 10);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.IceAir] = runesongAtEndOfTurn.chordsPresent[ChordTypes.IceAir] + 1;
-                    }
-                    if (elementsInColumn.Contains(Elements.Earth) && elementsInColumn.Contains(Elements.Air))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 11);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.EarthAir] = runesongAtEndOfTurn.chordsPresent[ChordTypes.EarthAir] + 1;
-                    }
-
-                    // Three elements
-
-                    if (elementsInColumn.Contains(Elements.Fire) &&
-                        elementsInColumn.Contains(Elements.Ice) &&
-                        elementsInColumn.Contains(Elements.Earth))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 12);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIceEarth] = runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIceEarth] + 1;
-                    }
-
-                    if (elementsInColumn.Contains(Elements.Fire) &&
-                        elementsInColumn.Contains(Elements.Ice) &&
-                        elementsInColumn.Contains(Elements.Air))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 13);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIceAir] = runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIceAir] + 1;
-                    }
-
-                    if (elementsInColumn.Contains(Elements.Ice) &&
-                        elementsInColumn.Contains(Elements.Earth) &&
-                        elementsInColumn.Contains(Elements.Air))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 15);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.IceEarthAir] = runesongAtEndOfTurn.chordsPresent[ChordTypes.IceEarthAir] + 1;
-                    }
-
-                    if (elementsInColumn.Contains(Elements.Fire) &&
-                        elementsInColumn.Contains(Elements.Ice) &&
-                        elementsInColumn.Contains(Elements.Earth) &&
-                        elementsInColumn.Contains(Elements.Air))
-                    {
-                        beatSource.SetParameterToInstance("PlayElement", 16);
-                        runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIceEarthAir] = runesongAtEndOfTurn.chordsPresent[ChordTypes.FireIceEarthAir] + 1;
-                    }
-                }
-            }
-        }
-    }
 
    
     private void OnDestroy()
