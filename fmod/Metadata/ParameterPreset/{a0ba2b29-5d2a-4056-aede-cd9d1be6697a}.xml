@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.02.00">
+	<object class="ParameterPreset" id="{a0ba2b29-5d2a-4056-aede-cd9d1be6697a}">
+		<property name="name">
+			<value>PlayElementEnemy01</value>
+		</property>
+		<relationship name="folder">
+			<destination>{e5a25d08-950f-4241-8bd2-862193bc70c8}</destination>
+		</relationship>
+		<relationship name="parameter">
+			<destination>{fcefc70b-d177-41f8-adba-f9ef9fed22e4}</destination>
+		</relationship>
+	</object>
+	<object class="GameParameter" id="{fcefc70b-d177-41f8-adba-f9ef9fed22e4}">
+		<property name="parameterType">
+			<value>2</value>
+		</property>
+		<property name="maximum">
+			<value>3</value>
+		</property>
+		<property name="enumerationLabels">
+			<value>NoElement</value>
+			<value>Neutral</value>
+			<value>Fire</value>
+		</property>
+		<property name="initialValue">
+			<value>0</value>
+		</property>
+	</object>
+</objects>
