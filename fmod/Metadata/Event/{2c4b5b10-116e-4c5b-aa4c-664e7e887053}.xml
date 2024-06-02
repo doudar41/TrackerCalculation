@@ -34,6 +34,9 @@
 		<relationship name="parameters">
 			<destination>{6a1d1770-b600-4cf2-bfbf-e93bd1f90763}</destination>
 		</relationship>
+		<relationship name="banks">
+			<destination>{f32c7d53-8fd2-4cd5-a3ee-bc9cfe5b1830}</destination>
+		</relationship>
 	</object>
 	<object class="EventMixer" id="{212ba05c-d769-4d7a-9704-647a2f5c535c}">
 		<relationship name="masterBus">
@@ -58,7 +61,7 @@
 	</object>
 	<object class="EventAutomatableProperties" id="{353fd22d-62aa-4a9a-bf37-ce196b503a2b}">
 		<property name="maxVoices">
-			<value>1</value>
+			<value>2</value>
 		</property>
 		<property name="voiceStealing">
 			<value>4</value>
@@ -83,7 +86,11 @@
 			<destination>{cc5427e7-b049-48ab-aaf4-8b68d9ecdc2a}</destination>
 		</relationship>
 	</object>
-	<object class="Timeline" id="{b27e0b78-adcf-4cac-98de-493badf6c0f2}" />
+	<object class="Timeline" id="{b27e0b78-adcf-4cac-98de-493badf6c0f2}">
+		<property name="isProxyEnabled">
+			<value>false</value>
+		</property>
+	</object>
 	<object class="ParameterProxy" id="{6a1d1770-b600-4cf2-bfbf-e93bd1f90763}">
 		<relationship name="modules">
 			<destination>{ece92473-e143-4a32-a742-bd350aff5941}</destination>
