@@ -32,6 +32,7 @@ public class TrackerUI : MonoBehaviour
     IEnumerator DelayBeforePlayhead(int columnIndex)
     {
         yield return new WaitForSeconds(GamesMainEvents.audioLatency);
+
         if (columnIndex > neutralToggles.Count || columnIndex < 0) yield return null;
 
         if (columnIndex > 7)

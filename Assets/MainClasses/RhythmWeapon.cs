@@ -7,7 +7,6 @@ public class RhythmWeapon : MonoBehaviour
     public QueuedRunesong runesongAtEndOfTurn = new QueuedRunesong();
     public Dictionary<Elements, SequenceRow> trackerRowList = new Dictionary<Elements, SequenceRow>();
 
-
     public void CheckElementalInColumn(List<Elements> elementsInColumn, BeatUpdateSource beatSource, string FMODParameter)
     {
 
@@ -364,7 +363,7 @@ public class SequenceRow
         return Row.Count;
     }
 
-    public bool GetStepFromRow(int index)
+    public bool GetRunePositionFromRow(int index)
     {
         if (Row.TryGetValue(index, out bool isOccupied))
         {

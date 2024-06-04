@@ -118,17 +118,18 @@ public class Tracker : RhythmWeapon
 
         if (countParse % 2 != 0)
         {
-            foreach (Elements e in System.Enum.GetValues(typeof(Elements)))
+            foreach (Elements element in System.Enum.GetValues(typeof(Elements)))
             {
-                if (trackerRowList[e].GetStepFromRow(currentColumn+1))
+                if (trackerRowList[element].GetRunePositionFromRow(currentColumn+1))
                 {
-                    elementsInColumn.Add(e);
-                    if (!runesongAtEndOfTurn.savedRunesongPattern.TryAdd(e, trackerRowList[e]))
+                    // trackerRowList contain sequenceRow of e element. element is enum Elements 
+                    
+                    elementsInColumn.Add(element); 
+                    if (!runesongAtEndOfTurn.savedRunesongPattern.TryAdd(element, trackerRowList[element]))
                     {
 
-                        runesongAtEndOfTurn.savedRunesongPattern[e] = trackerRowList[e];
-                        runesongAtEndOfTurn.occupiedRuneSlotsinRow[e] = runesongAtEndOfTurn.occupiedRuneSlotsinRow[e] + 1;
-                        
+                        runesongAtEndOfTurn.savedRunesongPattern[element] = trackerRowList[element];
+                        runesongAtEndOfTurn.occupiedRuneSlotsinRow[element] = runesongAtEndOfTurn.occupiedRuneSlotsinRow[element] + 1;
                     }
                 }
             }

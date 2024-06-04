@@ -2823,7 +2823,7 @@ MonoBehaviour:
   rows:
   - rowEffect: 0
     rowLevel: 1
-    rowBaseDamage: 10
+    rowBaseDamage: 14
   - rowEffect: 1
     rowLevel: 1
     rowBaseDamage: 8
