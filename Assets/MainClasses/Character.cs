@@ -40,6 +40,7 @@ public abstract class Character : MonoBehaviour
 
     public abstract void OnDeath();
 
+    public int ReturnMaxHealth() { return healthMax; }
     public int ReturnCurrentHealth() { return currentHealth; }
     public int ReturnCurrentShield() { return currentShield + shieldModifier; }
     public int ReturnCurrentSpeed() { return currentSpeed; }
