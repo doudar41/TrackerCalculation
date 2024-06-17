@@ -27,7 +27,6 @@ public class Player : Character
         if(isOn) sendPlayer.Invoke(this);
     }
 
-
     public override void OnLoseBattle()
     {
         //Start game from save point 
@@ -37,7 +36,6 @@ public class Player : Character
     {
         //give experience points which can be used on element upgrade or runepool, health or speed shield
     }
-
 
     public override void UpdateOnEndOfTurn()
     {
